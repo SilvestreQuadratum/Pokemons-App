@@ -1,0 +1,14 @@
+<div class="container">
+    <!-- <div *ngIf="!image" class="container__input">
+
+    </div>     -->
+    <div>  
+        <label class="container__label">                
+            <div class="container__title">Добавить файл</div>
+            <input type="file" (change)="onFileChange($event)">
+        </label>        
+    </div>    
+    <div *ngIf="image" class="container__imgBox">
+        <img src={{image}} alt="" class="container__img">
+    </div> 
+</div>

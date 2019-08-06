@@ -1,0 +1,51 @@
+.container {
+    width: 200px;
+    height: 200px;      
+    & input[type=file] {
+        outline:0;
+        opacity:0;
+        pointer-events:none;
+        user-select:none;
+        z-index: 2; 
+    }
+    &__label {
+        width: 100%;
+        height: 100%;
+        z-index: 2; 
+        margin: auto;
+        border:2px dashed grey;
+        border-radius:5px;
+        display:block;
+        padding:1.2em;
+        transition:border 300ms ease;
+        cursor:pointer;
+        text-align:center;        
+        &:hover {
+            border:2px solid #fff;
+        }        
+        &:hover .container__title {
+            color:#fff;
+        }
+    }
+    &__title {
+        width: 100%;
+        height: 100%;
+        line-height: 150px;
+        color:grey;
+        transition:200ms color;
+        font-size: 1.2rem;
+        z-index: 2; 
+    }
+    &__imgBox {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        top: -100%; 
+        z-index: -1;                
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        z-index: -1;  
+    }
+}

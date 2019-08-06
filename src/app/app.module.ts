@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ImgInputComponent } from './img-input/img-input.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     NewPokemonComponent,
     MenuComponent,
     HeaderComponent,
-    FooterComponent    
+    FooterComponent,
+    ImgInputComponent    
   ],
   imports: [
     BrowserModule,
