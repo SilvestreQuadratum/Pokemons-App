@@ -1,4 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-img-input',
@@ -7,12 +8,13 @@ import { Component, OnInit, Output } from '@angular/core';
 })
 export class ImgInputComponent implements OnInit {
 
-  @Output() image: string;
+  image: string; 
+  @Output() img = new EventEmitter<string>(); 
 
   constructor() { }
 
   ngOnInit() {
-  }
+  }  
 
   onFileChange(event):void {
     if(event.target.files.length > 0) 
@@ -21,5 +23,6 @@ export class ImgInputComponent implements OnInit {
     } else {
       this.image = null;
     }
+    this.img.emit(this.image);
   }
 }

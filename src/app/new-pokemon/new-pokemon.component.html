@@ -1,1 +1,26 @@
-<app-img-input></app-img-input>
+<div class="pokemon">
+    <div class="pokemon__area">            
+    </div>
+    <div class="pokemon__div-img">
+        <app-img-input (img)="getImage($event)"></app-img-input>
+    </div>  
+    <div class="pokemon__info">        
+        <div class="pokemon__types" (click)="toggleType('type1')" id="Type1">
+            <div class="pokemon__types-select" *ngIf="isType1">
+                <div class="pokemon__type" *ngFor="let el of typesPokemons" (click)="setType(el, 'Type1')">
+                    <div class="pokemon__type-icon pokemon__type-icon_{{el.modificator}}"></div>
+                    <div class="pokemon__type-name">{{el.name}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="pokemon__types" (click)="toggleType('type2')" id="Type2">
+                <div class="pokemon__types-select" *ngIf="isType2">
+                    <div class="pokemon__type" *ngFor="let el of typesPokemons" (click)="setType(el, 'Type2')">
+                        <div class="pokemon__type-icon pokemon__type-icon_{{el.modificator}}"></div>
+                        <div class="pokemon__type-name">{{el.name}}</div>
+                    </div>
+                </div>
+            </div>                        
+        <input type="text" class="pokemon__name" value="Имя" (change)="setName($event)">        
+    </div>  
+</div>
