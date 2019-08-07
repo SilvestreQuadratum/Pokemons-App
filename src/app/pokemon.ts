@@ -16,4 +16,5 @@ export class Pokemon {
     speed: number;
     description: string;
     image: string;
+    rarity: string;
 }

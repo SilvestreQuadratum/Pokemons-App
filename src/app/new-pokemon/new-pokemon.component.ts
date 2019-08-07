@@ -10,7 +10,7 @@ export class NewPokemonComponent implements OnInit {
 
   pokemon: Pokemon = {
     id: 0, name: "", types: [], height: 0, weight: 0, gender: [], category: [], abilities: [], weaknesses: [], hp: 1, attack: 1, defense: 1,
-    specialAttack: 1, specialDefense: 1, speed: 1, description: "", image: "" 
+    specialAttack: 1, specialDefense: 1, speed: 1, description: "", image: "", rarity: "Usual"
   };  
   isType1: boolean = false;
   isType2: boolean = false;
@@ -18,8 +18,23 @@ export class NewPokemonComponent implements OnInit {
     {name: "Нет", modificator: "None"},
     {name: "Электричество", modificator: "Electric"},
     {name: "Огонь", modificator: "Fire"},
-    {name: "Вода", modificator: "Water"}
-  ];
+    {name: "Вода", modificator: "Water"},
+    {name: "Мистик", modificator: "Psychic"},
+    {name: "Земля", modificator: "Ground"},
+    {name: "Нормальный", modificator: "Normal"},
+    {name: "Летающий", modificator: "Flying"},
+    {name: "Жук", modificator: "Bug"},
+    {name: "Боец", modificator: "Fighting"},
+    {name: "Трава", modificator: "Grass"},
+    {name: "Фея", modificator: "Fairy"},
+    {name: "Лёд", modificator: "Ice"},
+    {name: "Яд", modificator: "Poison"},
+    {name: "Камень", modificator: "Rock"},
+    {name: "Сталь", modificator: "Steel"},
+    {name: "Дракон", modificator: "Dragon"},
+    {name: "Призрак", modificator: "Ghost"}
+  ];  
+  rarityPokemons = ["usual","rare","veryRare","epic","legendary"];
 
   constructor() { }
 
@@ -33,12 +48,7 @@ export class NewPokemonComponent implements OnInit {
   setName(name: any):void {
     this.pokemon.name = name.target.value
   }
-  setType(val: any, el: string): void {
-    let type1 = document.getElementById(el);
-    let type2;
-    if(el == "Type1") type2 = document.getElementById("Type2");
-    if(el == "Type2") type2 = document.getElementById("Type1");
-    
+  setType(val: any, type1: any, type2: any): void {
     this.typesPokemons.forEach(el => {
       let classType = "pokemon__types_" + el.modificator;
       if(type1.classList.contains(classType)) {
@@ -68,10 +78,46 @@ export class NewPokemonComponent implements OnInit {
       switch (Tclass) {
         case "pokemon__types_Electric": this.pokemon.types.push("Electric"); break; 
         case "pokemon__types_Fire": this.pokemon.types.push("Fire"); break; 
-        case "pokemon__types_Water": this.pokemon.types.push("Water"); break;      
+        case "pokemon__types_Water": this.pokemon.types.push("Water"); break;  
+        case "pokemon__types_Psychic": this.pokemon.types.push("Psychic"); break;  
+        case "pokemon__types_Ground": this.pokemon.types.push("Ground"); break;  
+        case "pokemon__types_Normal": this.pokemon.types.push("Normal"); break;  
+        case "pokemon__types_Flying": this.pokemon.types.push("Flying"); break;  
+        case "pokemon__types_Bug": this.pokemon.types.push("Bug"); break;  
+        case "pokemon__types_Fighting": this.pokemon.types.push("Fighting"); break;  
+        case "pokemon__types_Grass": this.pokemon.types.push("Grass"); break;  
+        case "pokemon__types_Fairy": this.pokemon.types.push("Fairy"); break;  
+        case "pokemon__types_Ice": this.pokemon.types.push("Ice"); break;  
+        case "pokemon__types_Poison": this.pokemon.types.push("Poison"); break;  
+        case "pokemon__types_Rock": this.pokemon.types.push("Rock"); break;  
+        case "pokemon__types_Steel": this.pokemon.types.push("Steel"); break;  
+        case "pokemon__types_Dragon": this.pokemon.types.push("Dragon"); break;  
+        case "pokemon__types_Ghost": this.pokemon.types.push("Ghost"); break;              
         default:
           break;
       }
     });
+  }
+  setRarity(rarity: string, target: any): void {    
+    this.pokemon.rarity = rarity;    
+    this.rarityPokemons.forEach(rar => {
+      let searchRarity = "pokemon__area_" + rar;
+      if(target.classList.contains(searchRarity)) target.classList.remove(searchRarity);
+    });
+    let addedRarity = "pokemon__area_";
+    switch (rarity) {        
+      case "rare":
+      case "veryRare": 
+      case "epic": 
+      case "legendary": 
+        addedRarity = addedRarity + rarity; 
+        target.classList.add(addedRarity);
+        break;  
+      default:
+        break;
+    }
+  }
+  setDescription(el:any): void {
+    this.pokemon.description = el.value;
   }
 }
