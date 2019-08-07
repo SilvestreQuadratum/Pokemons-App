@@ -13,6 +13,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ImgInputComponent } from './img-input/img-input.component';
+import { InputboxComponent } from './inputbox/inputbox.component';
+import { ParametersComponent } from './parameters/parameters.component';
+import { BooleanBoxComponent } from './boolean-box/boolean-box.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { ImgInputComponent } from './img-input/img-input.component';
     MenuComponent,
     HeaderComponent,
     FooterComponent,
-    ImgInputComponent    
+    ImgInputComponent,
+    InputboxComponent,
+    ParametersComponent,
+    BooleanBoxComponent    
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,8 @@ import { ImgInputComponent } from './img-input/img-input.component';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    AppRoutingModule 
+    AppRoutingModule,
+    FormsModule 
   ],
   providers: [PokemonService, InMemoryDataService],
   bootstrap: [AppComponent]

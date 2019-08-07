@@ -1,0 +1,20 @@
+.parameters {
+    background-color: rgba(255, 255, 255, 0.6);    
+    width: 270px;
+    height: 180px;
+    &__name {
+        background-color: brown;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 1.3rem;
+        color: white;
+    }
+    &__item { 
+        float: left;   
+        width: 50%;    
+        height: 80px; 
+        padding: 6%;          
+    }
+}

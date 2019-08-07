@@ -1,0 +1,15 @@
+<div class="parameters">
+    <div class="parameters__name">Параметры</div>
+    <div class="parameters__item">
+        <app-inputbox (out)="setHeight($event)" (change)="setParameters()" [value]="parameters.height">Рост(м);</app-inputbox>
+    </div>
+    <div class="parameters__item">
+        <app-inputbox (out)="setWeight($event)" (change)="setParameters()" [value]="parameters.weight">Вес(кг);</app-inputbox>
+    </div>
+    <div class="parameters__item">
+        <app-boolean-box (out)="setMale($event)" (change)="setParameters()" [value]="parameters.genderMale">М</app-boolean-box>
+    </div>
+    <div class="parameters__item">
+        <app-boolean-box (out)="setFemale($event)" (change)="setParameters()" [value]="parameters.genderFemale">Ж</app-boolean-box>
+    </div>
+</div>

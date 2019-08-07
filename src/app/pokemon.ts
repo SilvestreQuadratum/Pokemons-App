@@ -4,7 +4,8 @@ export class Pokemon {
     types: string[];
     height: number;
     weight: number;
-    gender: string[];
+    genderMale: boolean;
+    genderFemale: boolean;
     category: string[];
     abilities: string[];
     weaknesses: string[];

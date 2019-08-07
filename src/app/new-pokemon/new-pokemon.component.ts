@@ -9,7 +9,7 @@ import { Pokemon } from '../pokemon';
 export class NewPokemonComponent implements OnInit {
 
   pokemon: Pokemon = {
-    id: 0, name: "", types: [], height: 0, weight: 0, gender: [], category: [], abilities: [], weaknesses: [], hp: 1, attack: 1, defense: 1,
+    id: 0, name: "", types: [], height: 0, weight: 0, genderMale: false, genderFemale: false, category: [], abilities: [], weaknesses: [], hp: 1, attack: 1, defense: 1,
     specialAttack: 1, specialDefense: 1, speed: 1, description: "", image: "", rarity: "Usual"
   };  
   isType1: boolean = false;
@@ -35,6 +35,12 @@ export class NewPokemonComponent implements OnInit {
     {name: "Призрак", modificator: "Ghost"}
   ];  
   rarityPokemons = ["usual","rare","veryRare","epic","legendary"];
+  param = {
+    height: 0,
+    weight: 0,
+    genderMale: false,
+    genderFemale: false
+  };
 
   constructor() { }
 
@@ -119,5 +125,12 @@ export class NewPokemonComponent implements OnInit {
   }
   setDescription(el:any): void {
     this.pokemon.description = el.value;
+  }   
+  setParameters(parameters: any) :void {
+    this.param = parameters;
+    this.pokemon.height = this.param.height;
+    this.pokemon.weight = this.param.weight;
+    this.pokemon.genderMale = this.param.genderMale;
+    this.pokemon.genderFemale = this.param.genderFemale;    
   }
 }

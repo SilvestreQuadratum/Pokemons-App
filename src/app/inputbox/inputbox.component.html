@@ -1,0 +1,4 @@
+<div class="item">
+    <div class="item__name"><ng-content></ng-content></div>
+    <input type="text" class="item__input" [(ngModel)]="value" #id (change)="setValue(id.value)">
+</div>

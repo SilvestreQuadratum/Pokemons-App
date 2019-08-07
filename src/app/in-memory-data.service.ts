@@ -13,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const pokemons = [
       { 
         id: 1, name: "Beedrill", types: ["Bug","Poison"], height: 1,
-        weight: 29.5, gender: ["Male","Female"], category: ["Poison Bee"],        
+        weight: 29.5, genderMale: true, genderFemale: true, category: ["Poison Bee"],        
         abilities: ["Swarm"], weaknesses: ["Fire","Flying","Psychic","Rock"],
         hp: 3, attack: 5, defense: 2,
         specialAttack: 2, specialDefense: 3,
@@ -22,7 +22,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },  
       { 
         id: 2, name: "Pikachu", types: ["Electric"], height: 0.4,
-        weight: 6, gender: ["Male","Female"], category: ["Mouse"],        
+        weight: 6, genderMale: true, genderFemale: true, category: ["Mouse"],        
         abilities: ["Static"], weaknesses: ["Ground"],
         hp: 2, attack: 3, defense: 2,
         specialAttack: 2, specialDefense: 2,
@@ -31,7 +31,7 @@ export class InMemoryDataService implements InMemoryDbService {
       }, 
       { 
         id: 3, name: "Arcanine", types: ["Fire"], height: 1.9,
-        weight: 155, gender: ["Male","Female"], category: ["Legendary"],        
+        weight: 155, genderMale: true, genderFemale: true, category: ["Legendary"],        
         abilities: ["Intimidate","Flash Fire"], weaknesses: ["Ground","Rock","Water"],
         hp: 4, attack: 6, defense: 4,
         specialAttack: 5, specialDefense: 3,
@@ -40,7 +40,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       { 
         id: 4, name: "Victreebel", types: ["Grass","Poison"], height: 1.7,
-        weight: 15.5, gender: ["Male","Female"], category: ["Flycatcher"],        
+        weight: 15.5, genderMale: true, genderFemale: true, category: ["Flycatcher"],        
         abilities: ["Chlorophyll"], weaknesses: ["Fire","Flying","Ice","Psychic"],
         hp: 3, attack: 5, defense: 3,
         specialAttack: 5, specialDefense: 3,
@@ -49,7 +49,7 @@ export class InMemoryDataService implements InMemoryDbService {
       }, 
       { 
         id: 5, name: "Slowbro", types: ["Water","Psychic"], height: 1.6,
-        weight: 78.5, gender: ["Male","Female"], category: ["Hermit Crab"],        
+        weight: 78.5, genderMale: true, genderFemale: true, category: ["Hermit Crab"],        
         abilities: ["Oblivious","Own Tempo"], weaknesses: ["Bug","Dark","Electric","Ghost","Grass"],
         hp: 4, attack: 4, defense: 5,
         specialAttack: 5, specialDefense: 3,
@@ -58,7 +58,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       { 
         id: 6, name: "Weezing", types: ["Poison"], height: 1.2,
-        weight: 9.5, gender: ["Male","Female"], category: ["Poison Gas"],        
+        weight: 9.5, genderMale: true, genderFemale: true, category: ["Poison Gas"],        
         abilities: ["Levitate"], weaknesses: ["Psychic"],
         hp: 3, attack: 5, defense: 5,
         specialAttack: 4, specialDefense: 3,
@@ -67,7 +67,7 @@ export class InMemoryDataService implements InMemoryDbService {
       }, 
       { 
         id: 7, name: "Pinsir", types: ["Bug"], height: 1.5,
-        weight: 55, gender: ["Male","Female"], category: ["Stag Beetle"],        
+        weight: 55, genderMale: true, genderFemale: true, category: ["Stag Beetle"],        
         abilities: ["Hyper Cutter","Mold Breaker"], weaknesses: ["Fire","Flying","Rock"],
         hp: 3, attack: 6, defense: 4,
         specialAttack: 3, specialDefense: 3,
@@ -76,7 +76,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },  
       { 
         id: 8, name: "Jolteon", types: ["Electric"], height: 0.8,
-        weight: 24.5, gender: ["Male","Female"], category: ["Lightning"],        
+        weight: 24.5, genderMale: true, genderFemale: true, category: ["Lightning"],        
         abilities: ["Volt Absorb"], weaknesses: ["Ground"],
         hp: 3, attack: 3, defense: 3,
         specialAttack: 5, specialDefense: 4,
@@ -85,7 +85,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       { 
         id: 9, name: "Dragonite", types: ["Dragon","Flying"], height: 2.2,
-        weight: 210, gender: ["Male","Female"], category: ["Dragon"],        
+        weight: 210, genderMale: true, genderFemale: true, category: ["Dragon"],        
         abilities: ["Inner Focus"], weaknesses: ["Ice","Dragon","Rock","Fairy"],
         hp: 4, attack: 7, defense: 4,
         specialAttack: 5, specialDefense: 4,
@@ -94,7 +94,7 @@ export class InMemoryDataService implements InMemoryDbService {
       }, 
       { 
         id: 10, name: "Ninetales", types: ["Flying"], height: 1.1,
-        weight: 19.9, gender: ["Male","Female"], category: ["Fox"],        
+        weight: 19.9, genderMale: true, genderFemale: true, category: ["Fox"],        
         abilities: ["Flash Fire"], weaknesses: ["Ground","Rock","Water"],
         hp: 3, attack: 4, defense: 3,
         specialAttack: 4, specialDefense: 4,
