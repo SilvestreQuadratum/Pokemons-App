@@ -122,15 +122,18 @@ export class NewPokemonComponent implements OnInit {
       default:
         break;
     }
-  }
-  setDescription(el:any): void {
-    this.pokemon.description = el.value;
-  }   
+  }    
   setParameters(parameters: any) :void {
     this.param = parameters;
     this.pokemon.height = this.param.height;
     this.pokemon.weight = this.param.weight;
     this.pokemon.genderMale = this.param.genderMale;
     this.pokemon.genderFemale = this.param.genderFemale;    
+  }  
+  setAbilities(list: string[]):void {
+    this.pokemon.abilities = list;    
+  }
+  setCategory(list: string[]):void {
+    this.pokemon.category = list;    
   }
 }

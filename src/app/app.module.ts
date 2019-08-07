@@ -16,7 +16,8 @@ import { ImgInputComponent } from './img-input/img-input.component';
 import { InputboxComponent } from './inputbox/inputbox.component';
 import { ParametersComponent } from './parameters/parameters.component';
 import { BooleanBoxComponent } from './boolean-box/boolean-box.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { InputListComponent } from './input-list/input-list.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms'
     ImgInputComponent,
     InputboxComponent,
     ParametersComponent,
-    BooleanBoxComponent    
+    BooleanBoxComponent,
+    InputListComponent    
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="container__name"><ng-content></ng-content></div>
+    <div class="container__inputbox">
+        <input type="text" class="container__input" #data>
+        <button class="container__btn" (click)="AddItem(data.value)">Добавить</button>
+    </div>
+    <div class="container__item" *ngFor="let el of list">
+        {{el}}
+        <div class="container__close" (click)="DeleteItem(el)">X</div>               
+    </div>
+</div>
