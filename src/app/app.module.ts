@@ -17,7 +17,8 @@ import { InputboxComponent } from './inputbox/inputbox.component';
 import { ParametersComponent } from './parameters/parameters.component';
 import { BooleanBoxComponent } from './boolean-box/boolean-box.component';
 import { FormsModule } from '@angular/forms';
-import { InputListComponent } from './input-list/input-list.component'
+import { InputListComponent } from './input-list/input-list.component';
+import { WeaknessesPokemonComponent } from './weaknesses-pokemon/weaknesses-pokemon.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { InputListComponent } from './input-list/input-list.component'
     InputboxComponent,
     ParametersComponent,
     BooleanBoxComponent,
-    InputListComponent    
+    InputListComponent,
+    WeaknessesPokemonComponent    
   ],
   imports: [
     BrowserModule,

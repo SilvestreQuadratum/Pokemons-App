@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="container__name">Слабости</div>
+    <div class="container__items">
+        <div class="container__item" *ngFor="let el of list; let i = index" (click)="setWeaknesses(el.modificator, i)" [ngClass]="{container__item_checked:list[i].checked}">
+            <div class="container__type container__type_{{el.modificator}}"></div>
+            <div class="container__label">{{el.name}}</div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../pokemon';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-new-pokemon',
@@ -14,26 +15,7 @@ export class NewPokemonComponent implements OnInit {
   };  
   isType1: boolean = false;
   isType2: boolean = false;
-  typesPokemons = [
-    {name: "Нет", modificator: "None"},
-    {name: "Электричество", modificator: "Electric"},
-    {name: "Огонь", modificator: "Fire"},
-    {name: "Вода", modificator: "Water"},
-    {name: "Мистик", modificator: "Psychic"},
-    {name: "Земля", modificator: "Ground"},
-    {name: "Нормальный", modificator: "Normal"},
-    {name: "Летающий", modificator: "Flying"},
-    {name: "Жук", modificator: "Bug"},
-    {name: "Боец", modificator: "Fighting"},
-    {name: "Трава", modificator: "Grass"},
-    {name: "Фея", modificator: "Fairy"},
-    {name: "Лёд", modificator: "Ice"},
-    {name: "Яд", modificator: "Poison"},
-    {name: "Камень", modificator: "Rock"},
-    {name: "Сталь", modificator: "Steel"},
-    {name: "Дракон", modificator: "Dragon"},
-    {name: "Призрак", modificator: "Ghost"}
-  ];  
+  typesPokemons = [];  
   rarityPokemons = ["usual","rare","veryRare","epic","legendary"];
   param = {
     height: 0,
@@ -42,9 +24,11 @@ export class NewPokemonComponent implements OnInit {
     genderFemale: false
   };
 
-  constructor() { }
+  constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
+    this.pokemonService.getPokemonTypes()
+        .subscribe(arr => this.typesPokemons = arr);
   }
 
   getImage(img: any): void {
@@ -135,5 +119,9 @@ export class NewPokemonComponent implements OnInit {
   }
   setCategory(list: string[]):void {
     this.pokemon.category = list;    
+  }
+  setWeakesses(weaknesses:string[]):void {
+    this.pokemon.weaknesses = weaknesses;
+    console.log(this.pokemon);
   }
 }

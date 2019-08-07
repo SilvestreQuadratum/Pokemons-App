@@ -45,4 +45,7 @@
     <div class="abilities">
         <app-input-list [inList]="pokemon.abilities" (outList)="setAbilities($event)">Способности</app-input-list>
     </div>
+    <div class="weaknesses">
+        <app-weaknesses-pokemon (outweaknesses)="setWeakesses($event)"></app-weaknesses-pokemon>
+    </div>
 </div>
