@@ -1,0 +1,32 @@
+.rarity {
+    width: 25px;
+    height: 210px; 
+    float: left;
+    &__item {
+        width: 100%;
+        height: 42px;
+        background-color: rgba(117, 117, 117, 0.5);
+        border-bottom: 1px solid black;  
+        opacity: 0.8;   
+        overflow: hidden;  
+        line-height: 42px;
+        text-align: center;            
+        cursor: pointer; 
+        font-size: 0;
+        transition: width .2s ease-in-out;       
+        &:hover  {
+            opacity: 1;
+            width: 120px;
+            font-size: 1.2rem;
+            transition: width .2s ease-in-out;
+        }  
+        &:last-child {               
+            border: none;       
+        }
+        &_usual {background-color: white;}
+        &_rare {background-color: lightblue;}
+        &_veryRare {background-color: dodgerblue;}
+        &_epic {background-color: mediumpurple;}
+        &_legendary {background-color: orangered;}
+    }
+}

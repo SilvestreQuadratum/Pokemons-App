@@ -18,7 +18,9 @@ import { ParametersComponent } from './parameters/parameters.component';
 import { BooleanBoxComponent } from './boolean-box/boolean-box.component';
 import { FormsModule } from '@angular/forms';
 import { InputListComponent } from './input-list/input-list.component';
-import { WeaknessesPokemonComponent } from './weaknesses-pokemon/weaknesses-pokemon.component'
+import { WeaknessesPokemonComponent } from './weaknesses-pokemon/weaknesses-pokemon.component';
+import { RarityPokemonComponent } from './rarity-pokemon/rarity-pokemon.component';
+import { AreaInputComponent } from './area-input/area-input.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { WeaknessesPokemonComponent } from './weaknesses-pokemon/weaknesses-poke
     ParametersComponent,
     BooleanBoxComponent,
     InputListComponent,
-    WeaknessesPokemonComponent    
+    WeaknessesPokemonComponent,
+    RarityPokemonComponent,
+    AreaInputComponent    
   ],
   imports: [
     BrowserModule,

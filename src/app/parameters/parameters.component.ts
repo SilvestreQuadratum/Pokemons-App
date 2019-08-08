@@ -20,7 +20,10 @@ export class ParametersComponent implements OnInit {
 
   ngOnInit() {
     if(this.inParam) {
-      this.parameters = this.inParam;
+      this.parameters.height = this.inParam.height;
+      this.parameters.weight = this.inParam.weight;
+      this.parameters.genderFemale = this.inParam.genderFemale;
+      this.parameters.genderMale = this.inParam.genderMale;
     }
   }
 

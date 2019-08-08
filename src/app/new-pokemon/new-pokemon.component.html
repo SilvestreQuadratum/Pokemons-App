@@ -1,43 +1,13 @@
 <div class="container">
-    <div class="pokemon">
-        <div class="pokemon__area" #idRarity>
-        </div>
-        <div class="pokemon__div-img">
-            <app-img-input (img)="getImage($event)"></app-img-input>
-        </div>
-        <div class="pokemon__info">
-            <div class="pokemon__types" (click)="toggleType('type1')" #idType1>
-                <div class="pokemon__types-select" *ngIf="isType1">
-                    <div class="pokemon__type" *ngFor="let el of typesPokemons" (click)="setType(el, idType1, idType2)">
-                        <div class="pokemon__type-icon pokemon__type-icon_{{el.modificator}}"></div>
-                        <div class="pokemon__type-name">{{el.name}}</div>
-                    </div>
-                </div>
-            </div>
-            <div class="pokemon__types" (click)="toggleType('type2')" #idType2>
-                <div class="pokemon__types-select" *ngIf="isType2">
-                    <div class="pokemon__type" *ngFor="let el of typesPokemons" (click)="setType(el, idType2, idType1)">
-                        <div class="pokemon__type-icon pokemon__type-icon_{{el.modificator}}"></div>
-                        <div class="pokemon__type-name">{{el.name}}</div>
-                    </div>
-                </div>
-            </div>
-            <input type="text" class="pokemon__name" value="Имя" (change)="setName($event)">
-        </div>
-    </div>
-    <div class="rarity">
-        <div class="rarity__item rarity__item_usual" (click)="setRarity('usual', idRarity)">Обычный</div>
-        <div class="rarity__item rarity__item_rare" (click)="setRarity('rare', idRarity)">Необычный</div>
-        <div class="rarity__item rarity__item_veryRare" (click)="setRarity('veryRare', idRarity)">Редкий</div>
-        <div class="rarity__item rarity__item_epic" (click)="setRarity('epic', idRarity)">Эпический</div>
-        <div class="rarity__item rarity__item_legendary" (click)="setRarity('legendary', idRarity)">Легендарный</div>
-    </div>
+    <div class="areaInput">
+        <app-area-input [inPokemon]="pokemon" (outArea)="setArea($event)"></app-area-input>
+    </div>       
     <div class="description">
         <div class="description__name">Описание</div>
         <textarea class="description__input" cols="30" rows="10" [(ngModel)]="pokemon.description"></textarea>
     </div>
     <div class="parameters">
-        <app-parameters [inParam]="param" (outParam)="setParameters($event)"></app-parameters>
+        <app-parameters [inParam]="pokemon" (outParam)="setParameters($event)"></app-parameters>
     </div>
     <div class="categorys">
         <app-input-list [inList]="pokemon.category" (outList)="setCategory($event)">Категории</app-input-list>
