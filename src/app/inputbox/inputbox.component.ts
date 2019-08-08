@@ -15,7 +15,7 @@ export class InputboxComponent implements OnInit {
   ngOnInit() {
     if(!this.value) {
       this.value = "";
-    }
+    }    
   }
   setValue(val:string):void {
     this.out.emit(val);

@@ -20,7 +20,8 @@ import { FormsModule } from '@angular/forms';
 import { InputListComponent } from './input-list/input-list.component';
 import { WeaknessesPokemonComponent } from './weaknesses-pokemon/weaknesses-pokemon.component';
 import { RarityPokemonComponent } from './rarity-pokemon/rarity-pokemon.component';
-import { AreaInputComponent } from './area-input/area-input.component'
+import { AreaInputComponent } from './area-input/area-input.component';
+import { EditComponent } from './edit/edit.component'
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AreaInputComponent } from './area-input/area-input.component'
     InputListComponent,
     WeaknessesPokemonComponent,
     RarityPokemonComponent,
-    AreaInputComponent    
+    AreaInputComponent,
+    EditComponent    
   ],
   imports: [
     BrowserModule,

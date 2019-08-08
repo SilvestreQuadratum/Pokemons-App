@@ -7,8 +7,6 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class ParametersComponent implements OnInit {
 
-  @Output() outParam = new EventEmitter<any>();
-  @Input() inParam: any;
   parameters = {
     height: 0,
     weight: 0,
@@ -16,15 +14,19 @@ export class ParametersComponent implements OnInit {
     genderFemale: false
   };
 
+  @Output() outParam = new EventEmitter<any>();
+  @Input() set inParam(pokemon:any )  
+  {
+    this.setFemale(pokemon.genderFemale);
+    this.setMale(pokemon.genderMale);
+    this.setHeight(pokemon.height);
+    this.setWeight(pokemon.weight);
+  }
+  
+
   constructor() { }
 
-  ngOnInit() {
-    if(this.inParam) {
-      this.parameters.height = this.inParam.height;
-      this.parameters.weight = this.inParam.weight;
-      this.parameters.genderFemale = this.inParam.genderFemale;
-      this.parameters.genderMale = this.inParam.genderMale;
-    }
+  ngOnInit() {    
   }
 
   setHeight(val: string):void {

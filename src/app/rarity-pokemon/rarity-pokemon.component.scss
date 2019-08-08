@@ -13,12 +13,14 @@
         text-align: center;            
         cursor: pointer; 
         font-size: 0;
-        transition: width .2s ease-in-out;       
+        transition: width .2s ease-in-out;              
         &:hover  {
+            position: relative;
             opacity: 1;
             width: 120px;
             font-size: 1.2rem;
             transition: width .2s ease-in-out;
+            z-index: 999;
         }  
         &:last-child {               
             border: none;       

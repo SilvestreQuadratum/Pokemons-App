@@ -1,7 +1,7 @@
 <div class="container">
     <div class="container__name"><ng-content></ng-content></div>
     <div class="container__inputbox">
-        <input type="text" class="container__input" #data>
+        <input type="text" class="container__input" #data placeholder="Текст">
         <button class="container__btn" (click)="AddItem(data.value)">Добавить</button>
     </div>
     <div class="container__item" *ngFor="let el of list">

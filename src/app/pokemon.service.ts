@@ -11,6 +11,10 @@ export class PokemonService {
 
   private pokemonsUrl = 'api/pokemons';
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
   pokemonTypes = [
     {name: "Нет", modificator: "None"},
     {name: "Электричество", modificator: "Electric"},
@@ -43,6 +47,18 @@ export class PokemonService {
 
   getPokemonTypes(): Observable<any[]>{
     return of(this.pokemonTypes);
+  }
+
+  getPokemon(id: number): Observable<Pokemon> {
+    const url = `${this.pokemonsUrl}/${id}`;
+    return this.http.get<Pokemon>(url).pipe(      
+      catchError(this.handleError<Pokemon>(`getPokemon id=${id}`))
+    );
+  }
+
+  AddPokemon(pokemon: Pokemon): Observable<Pokemon> {
+    return this.http.post<Pokemon>(this.pokemonsUrl, pokemon, this.httpOptions)
+            .pipe(catchError(this.handleError<Pokemon>('AddPokemon')));
   }
 
   private handleError<T> (operation = 'operation', result?: T) {

@@ -64,14 +64,14 @@
         padding-left: 15px;        
     }    
 }
-@media (max-width: 1600px) {
+@media (max-width: 1200px) {
     .container {
         &__items {
             grid-template-columns: 1fr 1fr;
         }
     }
 }
-@media (max-width: 1050px) {
+@media (max-width: 400px) {
     .container {
         &__items {
             grid-template-columns: 1fr;

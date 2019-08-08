@@ -1,21 +1,30 @@
 <div class="pokemon">
-    <div class="pokemon__area" #idRarity>
+    <div class="pokemon__area" [ngClass]="{pokemon__area_rare:RarityBool[1],pokemon__area_veryRare:RarityBool[2],
+        pokemon__area_epic:RarityBool[3],pokemon__area_legendary:RarityBool[4]}">
     </div>
     <div class="pokemon__div-img">
-        <app-img-input (img)="getImage($event)"></app-img-input>
+        <app-img-input (img)="getImage($event)" [inImage]="pokemon.image"></app-img-input>
     </div>
     <div class="pokemon__info">
-        <div class="pokemon__types" (click)="toggleType('type1')" #idType1>
+        <div class="pokemon__types" (click)="toggleType('type1')" [ngClass]="{pokemon__types_Electric:BoolClass[1],
+            pokemon__types_Fire:BoolClass[2],pokemon__types_Water:BoolClass[3],pokemon__types_Psychic:BoolClass[4],pokemon__types_Ground:BoolClass[5],
+            pokemon__types_Normal:BoolClass[6],pokemon__types_Flying:BoolClass[7],pokemon__types_Bug:BoolClass[8],pokemon__types_Fighting:BoolClass[9],
+            pokemon__types_Grass:BoolClass[10],pokemon__types_Fairy:BoolClass[11],pokemon__types_Ice:BoolClass[12],pokemon__types_Poison:BoolClass[13],
+            pokemon__types_Rock:BoolClass[14],pokemon__types_Steel:BoolClass[15],pokemon__types_Dragon:BoolClass[16],pokemon__types_Ghost:BoolClass[17]}">
             <div class="pokemon__types-select" *ngIf="isType1">
-                <div class="pokemon__type" *ngFor="let el of typesPokemons" (click)="setType(el, idType1, idType2)">
+                <div class="pokemon__type" *ngFor="let el of typesPokemons; let i = index" (click)="setType1(el.modificator, i)">
                     <div class="pokemon__type-icon pokemon__type-icon_{{el.modificator}}"></div>
                     <div class="pokemon__type-name">{{el.name}}</div>
                 </div>
             </div>
         </div>
-        <div class="pokemon__types" (click)="toggleType('type2')" #idType2>
+        <div class="pokemon__types" (click)="toggleType('type2')" [ngClass]="{pokemon__types_Electric:BoolClass2[1],
+            pokemon__types_Fire:BoolClass2[2],pokemon__types_Water:BoolClass2[3],pokemon__types_Psychic:BoolClass2[4],pokemon__types_Ground:BoolClass2[5],
+            pokemon__types_Normal:BoolClass2[6],pokemon__types_Flying:BoolClass2[7],pokemon__types_Bug:BoolClass2[8],pokemon__types_Fighting:BoolClass2[9],
+            pokemon__types_Grass:BoolClass2[10],pokemon__types_Fairy:BoolClass2[11],pokemon__types_Ice:BoolClass2[12],pokemon__types_Poison:BoolClass2[13],
+            pokemon__types_Rock:BoolClass2[14],pokemon__types_Steel:BoolClass2[15],pokemon__types_Dragon:BoolClass2[16],pokemon__types_Ghost:BoolClass2[17]}">
             <div class="pokemon__types-select" *ngIf="isType2">
-                <div class="pokemon__type" *ngFor="let el of typesPokemons" (click)="setType(el, idType2, idType1)">
+                <div class="pokemon__type" *ngFor="let el of typesPokemons; let i = index" (click)="setType2(el.modificator, i)">
                     <div class="pokemon__type-icon pokemon__type-icon_{{el.modificator}}"></div>
                     <div class="pokemon__type-name">{{el.name}}</div>
                 </div>
@@ -25,5 +34,5 @@
     </div>
 </div>
 <div class="rarity">
-    <app-rarity-pokemon (outRarity)="setRarity($event, idRarity)"></app-rarity-pokemon>
+    <app-rarity-pokemon (outRarity)="setRarity($event)"></app-rarity-pokemon>
 </div> 

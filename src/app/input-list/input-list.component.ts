@@ -6,14 +6,16 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./input-list.component.scss']
 })
 export class InputListComponent implements OnInit {
-
-  @Output() outList = new EventEmitter<string[]>();
-  @Input() inList: string[];
+  
   list: string[] = [];
+  @Output() outList = new EventEmitter<string[]>();
+  @Input() set inList(str:string[]) {
+    str.forEach(el => this.AddItem(el));
+  }
+  
   constructor() { }
 
-  ngOnInit() {
-    this.list = this.inList;
+  ngOnInit() {    
   }
 
   AddItem(item: string):void {

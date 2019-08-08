@@ -1,7 +1,7 @@
 <div class="container">
     <div class="areaInput">
         <app-area-input [inPokemon]="pokemon" (outArea)="setArea($event)"></app-area-input>
-    </div>       
+    </div>
     <div class="description">
         <div class="description__name">Описание</div>
         <textarea class="description__input" cols="30" rows="10" [(ngModel)]="pokemon.description"></textarea>
@@ -16,7 +16,7 @@
         <app-input-list [inList]="pokemon.abilities" (outList)="setAbilities($event)">Способности</app-input-list>
     </div>
     <div class="weaknesses">
-        <app-weaknesses-pokemon (outweaknesses)="setWeakesses($event)"></app-weaknesses-pokemon>
+        <app-weaknesses-pokemon (outweaknesses)="setWeakesses($event)" [value]="pokemon.weaknesses"></app-weaknesses-pokemon>
     </div>
     <div class="characteristics">
         <div class="characteristics__name">Характеристики</div>
@@ -38,9 +38,9 @@
         <div class="characteristics__item">
             <app-inputbox (out)="setSpeed($event)" [value]="pokemon.speed">Скорость</app-inputbox>
         </div>
-    </div>  
+    </div>
     <div class="btn-container">
-        <button class="btn-save" (click)="Save()">Сохранить</button>
+        <button class="btn-save" (click)="Edit()">Изменить</button>
         <button class="btn-back" (click)="goBack()">Назад</button>
-    </div>      
+    </div>
 </div>

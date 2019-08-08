@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 
 @Component({
@@ -10,6 +10,9 @@ export class ImgInputComponent implements OnInit {
 
   image: string; 
   @Output() img = new EventEmitter<string>(); 
+  @Input() set inImage(img){
+    this.image = img;
+  }
 
   constructor() { }
 
