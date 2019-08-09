@@ -88,11 +88,12 @@ export class EditComponent implements OnInit {
     if(value < 0) value = 1;
     if(value > 10) value = 10;
     this.pokemon.speed = +value;
-  }  
-  Edit():void {
-    console.log(this.pokemon);
-  }
+  }    
   goBack():void {
     this.location.back();
+  }
+  Edit(): void {
+    this.servicePokemon.updatePokemon(this.pokemon)
+      .subscribe(() => this.goBack());
   }
 }

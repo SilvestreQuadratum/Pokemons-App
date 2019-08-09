@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../pokemon';
 import { Location } from '@angular/common';
 import { PokemonService } from '../pokemon.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-pokemon',
@@ -10,6 +11,7 @@ import { PokemonService } from '../pokemon.service';
 })
 export class NewPokemonComponent implements OnInit {
 
+  pokemons: Pokemon[] = new Array(1000);
   pokemon: Pokemon = {
     id: 0, name: "Имя", types: [], height: 0, weight: 0, genderMale: false, genderFemale: false, category: [], abilities: [], weaknesses: [], hp: 1, attack: 1, defense: 1,
     specialAttack: 1, specialDefense: 1, speed: 1, description: "", image: "", rarity: "Usual"
@@ -17,10 +19,17 @@ export class NewPokemonComponent implements OnInit {
   
   constructor(
     private location: Location,
+    private route: Router,
     private servicePokemon: PokemonService
     ) { }
 
-  ngOnInit() {    
+  ngOnInit() { 
+    this.setId();       
+  }
+  setId():void {    
+    this.servicePokemon.getPokemons()
+        .subscribe(arr => this.pokemons = arr);
+    this.pokemon.id = this.genId(this.pokemons);    
   }
   setArea(value:any):void {
     this.pokemon.image = value.image;
@@ -81,9 +90,12 @@ export class NewPokemonComponent implements OnInit {
     this.pokemon.speed = +value;
   }  
   Save():void {
-    this.servicePokemon.AddPokemon(this.pokemon).subscribe(() => this.goBack());      
+    this.servicePokemon.AddPokemon(this.pokemon).subscribe(() => this.route.navigate([``]));      
   }
   goBack():void {
     this.location.back();
+  }
+  genId(pokemons: Pokemon[]): number {
+    return pokemons.length > 0 ? Math.max(...pokemons.map(pokemon => pokemon.id)) + 1 : 1;
   }
 }

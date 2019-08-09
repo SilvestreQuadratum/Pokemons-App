@@ -61,11 +61,23 @@ export class PokemonService {
             .pipe(catchError(this.handleError<Pokemon>('AddPokemon')));
   }
 
+  deletePokemon (pokemon: Pokemon | number): Observable<Pokemon> {
+    const id = typeof pokemon === 'number' ? pokemon : pokemon.id;
+    const url = `${this.pokemonsUrl}/${id}`;  
+    return this.http.delete<Pokemon>(url, this.httpOptions).pipe(      
+      catchError(this.handleError<Pokemon>('deletePokemon'))
+    );
+  }
+
+  updatePokemon (pokemon: Pokemon): Observable<any> {
+    return this.http.put(this.pokemonsUrl, pokemon, this.httpOptions).pipe(      
+      catchError(this.handleError<any>('updatePokemon'))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-        
-      console.error(error); 
-      
+    return (error: any): Observable<T> => {        
+      console.error(error);       
       return of(result as T);
     };
   }

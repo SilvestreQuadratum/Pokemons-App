@@ -1,5 +1,5 @@
 <div class="container">
-    <div *ngFor="let pokemon of pokemons" class="container__item" routerLink="/edit/{{pokemon.id}}">
-        <app-pokemon [pokemon]="pokemon">Загрузка...</app-pokemon>
+    <div *ngFor="let pokemon of pokemons" class="container__item" routerLink="detail/{{pokemon.id}}">
+        <app-pokemon [inPokemon]="pokemon">Загрузка...</app-pokemon>
     </div>
 </div>

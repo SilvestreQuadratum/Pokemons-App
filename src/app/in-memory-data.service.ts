@@ -99,7 +99,7 @@ export class InMemoryDataService implements InMemoryDbService {
         hp: 3, attack: 4, defense: 3,
         specialAttack: 4, specialDefense: 4,
         speed: 5, description: "Ninetales casts a sinister light from its bright red eyes to gain total control over its foe's mind. This Pokémon is said to live for a thousand years.",
-        image: "assets/images/pokemons/Ninetales.png", rarity: "Usual" 
+        image: "assets/images/pokemons/Ninetales.png", rarity: "Legendary" 
       }        
     ];
     return {pokemons};

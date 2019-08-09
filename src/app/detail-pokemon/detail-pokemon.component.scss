@@ -1,0 +1,284 @@
+.card {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &__name {        
+        width: 100%;
+        background-color: brown;
+        color: white;
+        font-size: 1.5rem;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    &__rarity {        
+        width: 100%;
+        background-color: white;
+        text-align: center;
+        font-size: 1.5rem;
+        height: 50px;
+        line-height: 50px;
+        &_rare {background-color:lightskyblue;color: white;}
+        &_veryRare {background-color: dodgerblue;color:white;}
+        &_epic {background-color: mediumpurple;color:white;}
+        &_legendary {background-color: orangered; color: white;}
+    }
+    &__image-box {
+        width: 100%;        
+    }
+    &__image {
+        width: 100%;
+    }
+    &__description {
+        font-size: 1.5rem;
+        text-align: justify;
+        margin: auto;
+        padding: 5%;        
+    }
+    &__types {
+        width: 100%;     
+        margin-bottom: 5%;   
+    }
+    &__types-name {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: brown;
+        color: white;
+    }
+    &__type {
+        display: none;
+        width: 80%;
+        margin: auto;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: white;
+        &_Electric {background-color: yellow; display: block;}  
+        &_Fire {background-color: red; display: block;color: white;}  
+        &_Water {background-color: blue; display: block;color: white;}
+        &_None {background-color: white; display: block;}
+        &_Psychic {background-color: hotpink; display: block;}
+        &_Ground {background-color: lightseagreen; display: block;color: white;}
+        &_Normal {background-color: navajowhite;display: block;}
+        &_Flying {background-color: royalblue;display: block;color: white;}
+        &_Bug {background-color: sienna;display: block;color: white;}
+        &_Fighting {background-color: orangered;display: block;color: white;}
+        &_Grass {background-color: lightgreen;display: block;}
+        &_Fairy {background-color: violet;display: block;}
+        &_Ice {background-color: lightblue;display: block;}
+        &_Poison {background-color: mediumvioletred;display: block;color: white;}
+        &_Rock {background-color: grey;display: block;color: white;}
+        &_Steel {background-color: lightslategrey;display: block;color: white;}
+        &_Dragon {background-color: gold;display: block;}
+        &_Ghost {background-color: purple;display: block;color: white;}        
+    }
+    &__weaknesses {
+        width: 100%;
+        margin-bottom: 5%;        
+    }
+    &__weaknesses-name {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: white;        
+    }
+    &__weakness {        
+        width: 80%;
+        margin: auto;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: white;
+        &_Electric {background-color: yellow; display: block;}  
+        &_Fire {background-color: red; display: block;color: white;}  
+        &_Water {background-color: blue; display: block;color: white;}
+        &_None {background-color: white; display: block;}
+        &_Psychic {background-color: hotpink; display: block;}
+        &_Ground {background-color: lightseagreen; display: block;color: white;}
+        &_Normal {background-color: navajowhite;display: block;}
+        &_Flying {background-color: royalblue;display: block;color: white;}
+        &_Bug {background-color: sienna;display: block;color: white;}
+        &_Fighting {background-color: orangered;display: block;color: white;}
+        &_Grass {background-color: lightgreen;display: block;}
+        &_Fairy {background-color: violet;display: block;}
+        &_Ice {background-color: lightblue;display: block;}
+        &_Poison {background-color: mediumvioletred;display: block;color: white;}
+        &_Rock {background-color: grey;display: block;color: white;}
+        &_Steel {background-color: lightslategrey;display: block;color: white;}
+        &_Dragon {background-color: gold;display: block;}
+        &_Ghost {background-color: purple;display: block;color: white;} 
+    }
+    &__parameters {
+        width: 100%;  
+        margin-bottom: 5%;              
+    }
+    &__parameters-container {
+        width: 100%;
+    }
+    &__parameters-name {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: brown;
+        color: white;
+    }
+    &__parameter {
+        width: 46%;
+        min-height: 50px;
+        float: left;  
+        margin: 2%;              
+    }
+    &__parameter-name, &__parameter-value {
+        width: 100%;
+        height: 100%;
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 100%;
+        background-color: white;
+        padding: 10px;
+    } 
+    &__parameter-name {
+        background-color: brown;
+        color: white;
+    }   
+    &__characteristics {        
+        width: 100%;
+        background-color: white; 
+        margin-bottom: 5%;   
+        overflow: hidden;    
+    }
+    &__characteristics-name {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: white;  
+        border-bottom: 1px solid black;      
+    }
+    &__categorys {       
+        width: 100%;
+        margin-bottom: 5%;
+    }
+    &__categorys-name {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: brown;
+        color: white;
+    }
+    &__category {
+        width: 90%;
+        margin: auto;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: white; 
+        border-bottom: 1px solid black;
+        &:last-child {
+            border: none;
+        }               
+    }
+    &__abilities {        
+        width: 100%;
+        margin-bottom: 5%;
+    }
+    &__abilities-name {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: white;        
+    }
+    &__ability {
+        width: 90%;
+        margin: auto;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: brown; 
+        color: white;
+        border-bottom: 1px solid white;
+        &:last-child {
+            border: none;
+        } 
+    }
+    &__btn-group {        
+        width: 100%;           
+        grid-column-start: 1;
+        grid-column-end: 3;      
+    }
+    &__btn-delete, &__btn-edit, &__btn-back {
+        width: 33.333%;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 1.5rem;
+        float: left;
+        cursor: pointer;
+    }
+    &__btn-delete {
+        background-color: red;
+        color: white;
+        &:hover {
+            background-color: rgb(221, 2, 2);
+            color: gainsboro;
+        }
+    }
+    &__btn-edit {
+        background-color: khaki;        
+        &:hover {
+            background-color: rgb(204, 196, 121);
+            color: darkslategrey;
+        }
+    }
+    &__btn-back {
+        background-color: gainsboro;        
+        &:hover {
+            background-color: rgb(204, 204, 204);
+            color: darkslateblue;
+        }
+    }
+}
+
+@media (max-width: 1550px) {
+    .card {
+        &__parameters {
+            grid-column-start: 1;
+            grid-column-end: 3;            
+        }
+        &__parameters-container {
+            width: 70%;    
+            margin: auto;                    
+        }
+        &__characteristics {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+}
+@media (max-width: 950px) {
+    .card {
+        width: 100%;
+        display: block; 
+        float: left;  
+    }    
+}

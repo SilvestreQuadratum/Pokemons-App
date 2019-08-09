@@ -21,7 +21,11 @@ import { InputListComponent } from './input-list/input-list.component';
 import { WeaknessesPokemonComponent } from './weaknesses-pokemon/weaknesses-pokemon.component';
 import { RarityPokemonComponent } from './rarity-pokemon/rarity-pokemon.component';
 import { AreaInputComponent } from './area-input/area-input.component';
-import { EditComponent } from './edit/edit.component'
+import { EditComponent } from './edit/edit.component';
+import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
+import { PreDetailComponent } from './pre-detail/pre-detail.component'
+import { ChartsModule } from 'ng2-charts';
+import { RadarComponent } from './radar/radar.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,10 @@ import { EditComponent } from './edit/edit.component'
     WeaknessesPokemonComponent,
     RarityPokemonComponent,
     AreaInputComponent,
-    EditComponent    
+    EditComponent,
+    DetailPokemonComponent,
+    PreDetailComponent,
+    RadarComponent    
   ],
   imports: [
     BrowserModule,
@@ -49,7 +56,8 @@ import { EditComponent } from './edit/edit.component'
       InMemoryDataService, { dataEncapsulation: false }
     ),
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
+    ChartsModule
   ],
   providers: [PokemonService, InMemoryDataService],
   bootstrap: [AppComponent]

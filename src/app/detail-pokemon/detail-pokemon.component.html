@@ -1,0 +1,77 @@
+<div class="card">
+    <div class="card__name">{{pokemon.name}}</div>
+    <div class="card__rarity" [ngClass]="{card__rarity_rare:rarityBool[1],card__rarity_veryRare:rarityBool[2],
+        card__rarity_epic:rarityBool[3],card__rarity_legendary:rarityBool[4]}">
+        {{pokemon.rarity}}
+    </div>
+    <div class="card__image-box">
+        <img src={{pokemon.image}} alt={{pokemon.name}} class="card__image">
+    </div>
+    <div class="card__description">
+        {{pokemon.description}}
+    </div>
+    <div class="card__types">
+        <div class="card__types-name">Типы</div>
+        <div class="card__type"
+            [ngClass]="{card__type_Electric:BoolClass[1],
+            card__type_Fire:BoolClass[2],card__type_Water:BoolClass[3],card__type_Psychic:BoolClass[4],card__type_Ground:BoolClass[5],
+            card__type_Normal:BoolClass[6],card__type_Flying:BoolClass[7],card__type_Bug:BoolClass[8],card__type_Fighting:BoolClass[9],
+            card__type_Grass:BoolClass[10],card__type_Fairy:BoolClass[11],card__type_Ice:BoolClass[12],card__type_Poison:BoolClass[13],
+            card__type_Rock:BoolClass[14],card__type_Steel:BoolClass[15],card__type_Dragon:BoolClass[16],card__type_Ghost:BoolClass[17]}">
+            {{pokemon.types[0]}}</div>
+        <div class="card__type"
+            [ngClass]="{card__type_Electric:BoolClass2[1],
+            card__type_Fire:BoolClass2[2],card__type_Water:BoolClass2[3],card__type_Psychic:BoolClass2[4],card__type_Ground:BoolClass2[5],
+            card__type_Normal:BoolClass2[6],card__type_Flying:BoolClass2[7],card__type_Bug:BoolClass2[8],card__type_Fighting:BoolClass2[9],
+            card__type_Grass:BoolClass2[10],card__type_Fairy:BoolClass2[11],card__type_Ice:BoolClass2[12],card__type_Poison:BoolClass2[13],
+            card__type_Rock:BoolClass2[14],card__type_Steel:BoolClass2[15],card__type_Dragon:BoolClass2[16],card__type_Ghost:BoolClass2[17]}">
+            {{pokemon.types[1]}}</div>
+    </div>
+    <div class="card__weaknesses">
+        <div class="card__weaknesses-name">Слабости</div>
+        <div class="card__weakness" *ngFor="let weakness of pokemon.weaknesses; let i = index"
+            [ngClass]="{card__weakness_Electric:BoolClass3[i][1],
+            card__weakness_Fire:BoolClass3[i][2],card__weakness_Water:BoolClass3[i][3],card__weakness_Psychic:BoolClass3[i][4],card__weakness_Ground:BoolClass3[i][5],
+            card__weakness_Normal:BoolClass3[i][6],card__weakness_Flying:BoolClass3[i][7],card__weakness_Bug:BoolClass3[i][8],card__weakness_Fighting:BoolClass3[i][9],
+            card__weakness_Grass:BoolClass3[i][10],card__weakness_Fairy:BoolClass3[i][11],card__weakness_Ice:BoolClass3[i][12],card__weakness_Poison:BoolClass3[i][13],
+            card__weakness_Rock:BoolClass3[i][14],card__weakness_Steel:BoolClass3[i][15],card__weakness_Dragon:BoolClass3[i][16],card__weakness_Ghost:BoolClass3[i][17]}">{{weakness}}</div>
+    </div>
+    <div class="card__parameters">
+        <div class="card__parameters-name">Параметры</div>
+        <div class="card__parameters-container">
+            <div class="card__parameter">
+                <div class="card__parameter-name">Рост</div>
+                <div class="card__parameter-value">{{pokemon.height}} м</div>
+            </div>
+            <div class="card__parameter">
+                <div class="card__parameter-name">Вес</div>
+                <div class="card__parameter-value">{{pokemon.weight}} кг</div>
+            </div>
+            <div class="card__parameter">
+                <div class="card__parameter-name">Мужские особи</div>
+                <div class="card__parameter-value">{{male}}</div>
+            </div>
+            <div class="card__parameter">
+                <div class="card__parameter-name">Женские особи</div>
+                <div class="card__parameter-value">{{female}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="card__characteristics">
+        <div class="card__characteristics-name">Характеристики</div>
+        <app-radar [inPokemon]="pokemon"></app-radar>
+    </div>
+    <div class="card__categorys">
+        <div class="card__categorys-name">Категории</div>
+        <div class="card__category" *ngFor="let category of pokemon.category">{{category}}</div>
+    </div>
+    <div class="card__abilities">
+        <div class="card__abilities-name">Способности</div>
+        <div class="card__ability" *ngFor="let ability of pokemon.abilities">{{ability}}</div>
+    </div>
+    <div class="card__btn-group">
+        <div class="card__btn-delete" (click)="deletePokemon()">Удалить</div>
+        <div class="card__btn-edit" (click)="goEdit()">Изменить</div>
+        <div class="card__btn-back" (click)="goBack()">Назад</div>
+    </div>
+</div>
