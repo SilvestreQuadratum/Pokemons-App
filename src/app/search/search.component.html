@@ -1,0 +1,10 @@
+<div class="search">
+    <input #searchBox type="text" class="search__input" placeholder="Найти" (input)="search(searchBox.value)">
+    <ul class="search__result">
+        <li class="search__item" *ngFor="let pokemon of pokemons$ | async">
+            <a routerLink="/detail/{{pokemon.id}}" class="search__a" (click)="searchBox.value='';search(searchBox.value)">
+                {{pokemon.name}}
+            </a>
+        </li>
+    </ul>
+</div>

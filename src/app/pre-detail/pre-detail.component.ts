@@ -26,5 +26,5 @@ export class PreDetailComponent implements OnInit {
   getPokemon(id: number): void {
     this.servicePokemon.getPokemon(id)
       .subscribe(pokemon => this.pokemon = pokemon);          
-  }
+  }  
 }

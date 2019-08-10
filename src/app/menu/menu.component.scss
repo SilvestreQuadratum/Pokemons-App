@@ -1,0 +1,24 @@
+.menu {
+    float: left;
+    margin-left: 10%;
+    width: 50%;
+    min-width: 250px;
+    height: 100%;
+    line-height: 100%;
+    &__a {
+        display: block;
+        float: left;
+        height: 100%;
+        line-height: 50px;
+        color: white;
+        width: 180px;   
+        padding: 5px; 
+        text-decoration-line: none;
+        font-size: 1.1rem;
+        text-align: center;
+        &:hover {
+            background-color: white;
+            color: brown;
+        }    
+    }
+}

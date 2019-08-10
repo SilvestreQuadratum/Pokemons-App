@@ -75,6 +75,15 @@ export class PokemonService {
     );
   }
 
+  searchPokemons(term: string): Observable<Pokemon[]> {
+    if (!term.trim()) {     
+      return of([]);
+    }
+    return this.http.get<Pokemon[]>(`${this.pokemonsUrl}/?name=${term}`).pipe(     
+      catchError(this.handleError<Pokemon[]>('searchPokemons', []))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {        
       console.error(error);       

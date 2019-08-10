@@ -104,7 +104,5 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
     return {pokemons};
   }
-  genId(pokemons: Pokemon[]): number {
-    return pokemons.length > 0 ? Math.max(...pokemons.map(pokemon => pokemon.id)) + 1 : 1;
-  }
+  
 }

@@ -26,6 +26,7 @@ import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.componen
 import { PreDetailComponent } from './pre-detail/pre-detail.component'
 import { ChartsModule } from 'ng2-charts';
 import { RadarComponent } from './radar/radar.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { RadarComponent } from './radar/radar.component';
     EditComponent,
     DetailPokemonComponent,
     PreDetailComponent,
-    RadarComponent    
+    RadarComponent,
+    SearchComponent    
   ],
   imports: [
     BrowserModule,
