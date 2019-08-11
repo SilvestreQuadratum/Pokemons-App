@@ -16,7 +16,9 @@
     &__result {
         margin-top: 0;
         padding-left: 0;
-        width: 100%;        
+        width: 250px;   
+        position: absolute;   
+        z-index: 999;          
     }
     &__item {
         border-bottom: 1px solid gray;
@@ -45,5 +47,11 @@
             color: white;
             background-color: #607D8B;
         }
+    }
+}
+@media (max-width: 734px) {
+    .search {
+        width: 96%;
+        margin: 2%;        
     }
 }
