@@ -4,10 +4,11 @@ p {
 
 .radar {
   display: block;
-  width: 100%;
-  margin-bottom: 5%;    
+  width: 100%;  
+  margin-bottom: 5%;      
 }
 .radar canvas {
   width: 100px;
   height: 100%;
+  max-width: 100%;  
 }
