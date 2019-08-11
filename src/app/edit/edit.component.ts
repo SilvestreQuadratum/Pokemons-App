@@ -92,7 +92,7 @@ export class EditComponent implements OnInit {
   goBack():void {
     this.location.back();
   }
-  Edit(): void {
+  Edit(): void {    
     this.servicePokemon.updatePokemon(this.pokemon)
       .subscribe(() => this.goBack());
   }

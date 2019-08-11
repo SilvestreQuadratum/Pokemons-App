@@ -90,6 +90,7 @@ export class NewPokemonComponent implements OnInit {
     this.pokemon.speed = +value;
   }  
   Save():void {
+    if(this.pokemon.image == "") this.pokemon.image = "assets/images/pokemons/noimage.png"; 
     this.servicePokemon.AddPokemon(this.pokemon).subscribe(() => this.route.navigate([``]));      
   }
   goBack():void {
